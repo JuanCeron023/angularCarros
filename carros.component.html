@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col mt-5 mb-3">
+      <div class="col-md-11 mx-auto">
+
+<h1 style="margin-left: 15px;font-family: fantasy; color: rgb(64, 97, 194)" class="text-center">Administrador de autos
+</h1>
+
+
+
+<div class="float-right">
+  <form  routerLink="/registrar" routerLinkActive="active">
+      <input type="submit" style=" margin-left: 970px ; margin-bottom: 20px;width: 195px !important; height: 60px !important;" class="btn btn-primary" value="+ Añadir un nuevo carro" />
+  </form>
+  </div>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr class="tr1">
+      <th class="align-middle">#</th>
+      <th class="align-middle">Nombre</th>
+      <th class="align-middle">Cilindraje</th>
+      <th class="align-middle">Caballos de Fuerza</th>
+      <th class="align-middle">Aceleracion 0 a 100 km/h</th>
+      <th class="align-middle"> Precio </th>
+      <th class="align-middle">Foto</th>
+      <th class="align-middle">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let car of carros | paginate: { itemsPerPage: 3, currentPage: p} " class="tr1">
+      <th class="align-middle" scope="row">{{car.id}}</th>
+      <td class="align-middle">{{car.nombre}}</td>
+      <td class="align-middle">{{car.cilindraje}} Cc</td>
+      <td class="align-middle" style="min-width: 120px">{{car.caballosfuerza}}</td>
+      <td class="align-middle">{{car.aceleracion}} s</td>
+      <td class="align-middle" style="min-width: 120px">$ {{car.precio}}</td>
+      <td>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <img src='http://127.0.0.1:8000/img/{{car.id}}.jpg' onerror="this.src='assets/img/defaults.jpg'" class="imagen1">
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="align-middle">
+        <div class="container" style="width: 140px;">
+          <div class="row">
+            <div style="width: 40px" class="col-sm">
+              <a routerLink="/editar/{{car.id}}" routerLinkActive="active" class="btn btn-success"><i class="fas fa-edit"></i></a>
+            </div>
+            <div style="width: 40px;" class="col-sm">
+              <form >
+                <button (click)="deleteCarro(car.id)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+
+
+</div>
+</div>
+</div>
+</div>

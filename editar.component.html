@@ -1,0 +1,82 @@
+
+<h1 style="margin-left: 10px;font-family: fantasy; color: rgb(64, 97, 194)">Edita los valores del auto</h1>
+
+
+<div class="container p-4">
+    <div class="row">
+        <div style="margin-left: 150px" class="col-md-8">
+            <div style="background: rgba(8, 156, 224, 0.651)" class="card card-body">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label >
+                        Nombre:<br>
+                    </label>
+                        <input type="text"  name="nombre" value="{{carro.nombre}}" class="form-control" placeholder="Escribe el nombre del carro" required [(ngModel)]="datas.nombre">
+                    </div><br>
+                    <div class="form-group">
+                        <label >
+                            Cilindraje:<br>
+                        </label>
+                            <input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="cilindraje" value="{{carro.cilindraje}}" class="form-control" placeholder="Escribe el cilindraje del carro" required [(ngModel)]="datas.cilindraje">
+                        </div><br>
+                        <div class="form-group">
+                            <label >
+                                Caballos de fuerza:<br>
+                            </label>
+                                <input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="caballosfuerza" value="{{carro.caballosfuerza}}" class="form-control" placeholder="Escribe los caballos de fuerza del carro" required [(ngModel)]="datas.caballosfuerza">
+                            </div><br>
+                    
+                            <div class="form-group">
+                                <label >
+                                    Aceleracion:<br>
+                                </label>
+                                    <input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="aceleracion" value="{{carro.aceleracion}}" class="form-control" placeholder="Escribe la aceleracion del carro" required [(ngModel)]="datas.aceleracion">
+                                </div><br>
+
+
+                                <div class="form-group">
+                                    <label >
+                                        Precio:<br>
+                                    </label>
+                                        <input type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" name="precio" value="{{carro.precio}}"  class="form-control" placeholder="Escribe el precio del carro" required [(ngModel)]="datas.precio">
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <input type="file"  name="myFile" (change)="fileEvent($event)"     class="form-control"    value="" placeholder="selecciona la foto" required        >
+                                    </div><br>               
+                                    <div style="margin-left: 500px;" class="form-group">
+                                        <input  type="submit" class="btn btn-success btn-block btn-lg" (click)="updateCarroDatag(carro.id)" value="Guardar" >
+                                    </div><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            <!--
+                <form #f="ngForm" (ngSubmit)="onSubmitform()">
+                    <input type="file"  name="myFile" (change)="fileEvent($event)"/>
+                    <button>Upload Image</button>
+                </form>
+            -->
+            
+                
+                <div style="margin-left: 1100px">
+                    <form>
+                        <input routerLink="/principal" routerLinkActive="active"  type="submit" style=" margin-right: 20px ;width: 170px !important; height: 60px !important;" class="btn btn-success" value="Regresar" />
+                    </form>
+                    <br>    <br>
+                    </div>
+                
+                
+                
+                
+                
+
+
+
+
+
+
+
